@@ -3,47 +3,79 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FloidUI.MainPage">
 
-    <ScrollView>
-        <VerticalStackLayout 
-    x:Name="stack">
-            <Entry 
-        Margin="0,0,0,10"
-        x:Name="SborkaLabel" 
-        Placeholder="Введите адрес сборки" />
-            <HorizontalStackLayout Spacing="10" VerticalOptions="CenterAndExpand" >
-                <Button 
-            Margin="0,0,0,30"
-            WidthRequest="200"
-            HorizontalOptions="Start"
-            BackgroundColor="BlueViolet"
-            x:Name="SborkaButtom" Text="Ввести"
-            Clicked="SborkaButtom_Clicked"/>
-                <Label 
-            x:Name="SborkaInformation"
-            Text="Жду сборку"/>
-            </HorizontalStackLayout>
-            <Entry 
-        Margin="0,0,0,10"
-        x:Name="VercEntry" 
-        Placeholder="Введите количество вершин" />
-
-            <HorizontalStackLayout>
-                <Button 
-            Margin="0,0,0,30"
-            WidthRequest="200"
-            HorizontalOptions="Start"
-            Text="Сгенерировать матрицу"
-            BackgroundColor="BlueViolet"
-            Clicked="Button_Clicked"    />
-                <Label x:Name="Information"
-               Text="Если пути нет - ставьте 999"
-               Margin="10,10,0,30"
-               HorizontalOptions="Center"
-               />
-            </HorizontalStackLayout>
-
-
-        </VerticalStackLayout>
+    <ScrollView
+        BackgroundColor="Gray">
+        <Grid
+            ColumnDefinitions="2*, *"
+            RowDefinitions="*, Auto">
+            <VerticalStackLayout
+                x:Name="functionalStack"
+                Grid.Row="0"
+                Grid.Column="0"
+                Margin="10,10,5,0"
+                WidthRequest="500"
+                VerticalOptions="Center"
+                HorizontalOptions="Center">
+            </VerticalStackLayout>
+            <Grid
+                ColumnDefinitions="*, Auto"
+                HeightRequest="50"
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="25">
+                <Entry
+                    x:Name="dllEntry"
+                    HorizontalOptions="Fill"
+                    Margin="0,0,25,0"
+                    BackgroundColor="White">
+                </Entry>
+                <Button
+                    x:Name="loadDllButton"
+                    HorizontalOptions="End"
+                    WidthRequest="150"
+                    Text="Load DLL"
+                    CornerRadius="15"
+                    Grid.Column="1">
+                </Button>
+            </Grid>
+            <Grid
+                ColumnDefinitions="*, Auto"
+                HeightRequest="50"
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="25">
+                <Entry
+                    x:Name="numberOfCellsEntry"
+                    HorizontalOptions="Fill"
+                    Margin="0,0,25,0"
+                    BackgroundColor="White"
+                    Grid.Column="0">
+                </Entry>
+                <Button
+                    x:Name="generateMatrixButton"
+                    HorizontalOptions="End"
+                    Text="Generate Matrix"
+                    CornerRadius="15"
+                    Grid.Column="1">
+                </Button>
+            </Grid>
+            
+            <VerticalStackLayout
+                BackgroundColor="White"
+                Grid.Column="1"
+                Margin="5,10,10,0">
+                <Label
+                    Text="Title"
+                    FontSize="36"
+                    FontAttributes="Bold"
+                    Margin="25,25,25,0">
+                </Label>
+                <Label
+                    Text="description"
+                    Margin="25">
+                </Label>
+            </VerticalStackLayout>
+        </Grid>
     </ScrollView>
 
 </ContentPage>

@@ -6,58 +6,81 @@ namespace FloidUI
 {
     public partial class MainPage : ContentPage
     {
-
-        int buttomCount;
-        string sborkaAdress;
         bool assemblyStatus;
         private Assembly assembly;
 
-        int vertexAmount;
-        FloidContract.Cell[,] cells;
-        Microsoft.Maui.Controls.Grid matrixGrid;// сетка из entries
-
-
-        public MainPage()
-        {
-            InitializeComponent();
-        }
-
-        public void SborkaButtom_Clicked(object sender, EventArgs e)
-        {
-            sborkaAdress = SborkaLabel.Text;
-
-            InstallAssembly();
-        }
-
-        private void InstallAssembly()
+        public int ReadEntrySafely(Entry entry)
         {
             try
             {
-                UploadNewDll();
-                CheckForContract(assembly);
-                if (assemblyStatus)
+                return int.Parse(entry.Text);
+            }
+            catch 
+            {
+                return 1;
+            }
+        }
+
+        public EventHandler GenerateMatrixButtonClicked(Entry readFrom)
+        {
+            return async (object? sender, EventArgs e) =>
+            {
+                int size = ReadEntrySafely(readFrom);
+                if (sender is Button n)
                 {
-                    SborkaInformation.Text = "Получилось!!!";
-                    SborkaLabel.BackgroundColor = Colors.Green;
+                    n.IsEnabled = false;
+                    functionalStack.Children[0] = (await Task<Grid>.Run(() =>
+                    {
+                        return new EntriesGrid(size, 500).GetGrid;
+                    }));
+                    n.IsEnabled = true;
                 }
-                else
+            };
+        }
+
+        public EventHandler AssemblyButtonClicked(Entry readFrom)
+        { 
+            return (object? sender, EventArgs e) =>
                 {
-                    SborkaInformation.Text = "Сборка не реализует требуемый интерфейс";
-                    SborkaLabel.BackgroundColor = Colors.Red;
+                    string path = readFrom.Text;
+                    InstallAssemblyAsync(path);
+                };
+        }
+
+        private async void InstallAssemblyAsync(string path)
+        {
+            try 
+            { 
+                UploadNewDll(path);
+            }
+            catch
+            {
+                await DisplayAlert("Invalid Path", "Change the DLL path", "OK");
+                return;
+            }
+
+            try
+            {
+                CheckForContract(assembly);
+                if (!assemblyStatus)
+                {
+                    throw new Exception();
                 }
             }
             catch
             {
-                SborkaInformation.Text = "Не удалось загрузить сборку";
-                SborkaLabel.BackgroundColor = Colors.Red;
+                /*var alert = new Task(() => DisplayAlert("Alert", "You have been alerted", "OK"));
+                alert.Start();
+                await alert;*/
+                await DisplayAlert("Contract not realized", "Try another realization DLL", "OK");
             }
         }
 
-        private void UploadNewDll()
+        private void UploadNewDll(string path)
         {
-            Assembly asm = Assembly.LoadFrom(SborkaLabel.Text);
+            Assembly asm = Assembly.LoadFrom(path);
             assembly = asm;
-            CheckForContract(asm);
+            //CheckForContract(asm);
         }
 
         private void CheckForContract(Assembly asm)
@@ -69,134 +92,29 @@ namespace FloidUI
             assemblyStatus = hasImplementation;
         }
 
-        private void Button_Clicked(object sender, EventArgs e) // создание матрицы введенного размера
+        public MainPage()
         {
-            buttomCount++;
-            if (buttomCount > 1)
+            InitializeComponent();
+
+            EntriesGrid eg = new(10,500);
+            functionalStack.Add(eg.GetGrid);
+
+            Button runFloyd = new Button()
             {
-                stack.Children.RemoveAt(stack.Children.Count - 2);
-                stack.Children.RemoveAt(stack.Children.Count - 1);
-                Information.Text = "Если пути нет - ставьте 999";
-            }
+                HeightRequest = 50,
+                WidthRequest = 150,
+                Text = "Run Floyd",
+                Margin = new Thickness(0, 25, 0, 0),
+                BackgroundColor = Colors.Black,
+                TextColor = Colors.White
+            };
 
-            int.TryParse(VercEntry.Text, out vertexAmount);
-            Microsoft.Maui.Controls.Grid grid = new Microsoft.Maui.Controls.Grid();
-            matrixGrid = grid;
+            functionalStack.Add(runFloyd);
 
-            for (int i = 0; i < vertexAmount; i++)
-            {
-                grid.RowDefinitions.Add(new RowDefinition { Height = 40 });
+            loadDllButton.Clicked += AssemblyButtonClicked(dllEntry);
 
-                for (int j = 0; j < vertexAmount; j++)
-                {
-                    if (i == 0)
-                    {
-                        grid.ColumnDefinitions.Add(new ColumnDefinition { Width = 40 });
-                    }
-
-                    Entry entry = new Entry();
-                    grid.SetRow(entry, i);
-                    grid.SetColumn(entry, j);
-                    grid.Children.Add(entry);
-                }
-            }
-
-            grid.HorizontalOptions = LayoutOptions.Center;
-            grid.VerticalOptions = LayoutOptions.Center;
-
-            stack.Children.Add(grid);
-
-            Button floidButton = new Button();
-            floidButton.HorizontalOptions = LayoutOptions.Center;
-            floidButton.VerticalOptions = LayoutOptions.Center;
-            floidButton.Background = Colors.BlueViolet;
-            floidButton.Text = "Запустить алгоритм Флойда";
-            floidButton.Clicked += OnButtonClicked;
-
-            stack.Children.Add(floidButton);
+            generateMatrixButton.Clicked += GenerateMatrixButtonClicked(numberOfCellsEntry);
         }
-
-
-        void ReadMatrixGrid() // считываем значения из сетки и заносим в матицу
-        {
-            if (cells != null)
-            {
-                cells = null;
-            }
-            if (cells == null)
-            {
-                cells = new FloidContract.Cell[vertexAmount, vertexAmount];
-            }
-
-            for (int i = 0; i < vertexAmount; i++)
-            {
-                for (int j = 0; j < vertexAmount; j++)
-                {
-                    cells[i, j] = new FloidContract.Cell();
-                }
-            }
-
-            foreach (var child in matrixGrid.Children)
-            {
-                // Проверяем, является ли элемент Entry
-                if (child is Microsoft.Maui.Controls.Entry entry)
-                {
-                    // Получаем строку и столбец элемента
-                    int row = Microsoft.Maui.Controls.Grid.GetRow(entry);
-                    int column = Microsoft.Maui.Controls.Grid.GetColumn(entry);
-                    // Парсим значение элемента и записываем его в массив
-                    if (int.TryParse(entry.Text, out int value))
-                    {
-                        cells[row, column].value = value;
-                    }
-                }
-            }
-        }
-
-        private void OnButtonClicked(object sender, System.EventArgs e)
-        {
-            Information.Text = "Алгоритм начался";
-            Button button = (Button)sender;
-            ReadMatrixGrid();
-            FloidAlgo(cells, vertexAmount);
-
-        }//кнопка запуска алгоритма
-
-        private async void FloidAlgo(FloidContract.Cell[,] cells, int vertexAmount)
-        {
-            await Task.Run(() =>
-            {
-                _ = Parallel.For(0, vertexAmount, k =>
-                {
-                    Parallel.For(0, vertexAmount, i =>
-                    {
-                        for (int j = 0; j < vertexAmount; j++)
-                        {
-                            cells[i, j].value = Math.Min(cells[i, j].value, cells[i, k].value + cells[k, j].value);
-                            //ChangeEntryMatrix(matrixGrid, cells);
-                        }
-                    });
-                });
-            });
-        }
-        private void ChangeEntryMatrix(Microsoft.Maui.Controls.Grid grid, FloidContract.Cell[,] cells)
-        {
-            foreach (var child in grid.Children)
-            {
-                // Проверяем, является ли элемент Entry
-                if (child is Microsoft.Maui.Controls.Entry entry)
-                {
-                    // Получаем строку и столбец элемента
-                    int row = Microsoft.Maui.Controls.Grid.GetRow(entry);
-                    int column = Microsoft.Maui.Controls.Grid.GetColumn(entry);
-                    entry.BackgroundColor = Colors.Red;
-                    entry.Text = cells[row, column].strValue;
-                    entry.BackgroundColor = Colors.Transparent;
-                }
-            }
-        }
-
-
     }
 
 }

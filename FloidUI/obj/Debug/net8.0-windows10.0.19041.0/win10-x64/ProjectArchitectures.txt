@@ -1,1 +1,1 @@
-C:\Users\kn_ks\OneDrive\Рабочий стол\Инфа\FloidUI\FloidUI\FloidUI.csproj;x64
+C:\Users\apusi\OneDrive\Desktop\uni\Ksusha\FloidUI\FloidUI.csproj;x64

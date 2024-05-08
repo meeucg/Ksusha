@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kn_ks\\OneDrive\\Рабочий стол\\Инфа\\FloidUI\\FloidUI\\FloidUI.csproj": {}
+    "C:\\Users\\apusi\\OneDrive\\Desktop\\uni\\Ksusha\\FloidUI\\FloidUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kn_ks\\OneDrive\\Рабочий стол\\Инфа\\FloidUI\\FloidUI\\FloidUI.csproj": {
+    "C:\\Users\\apusi\\OneDrive\\Desktop\\uni\\Ksusha\\FloidUI\\FloidUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kn_ks\\OneDrive\\Рабочий стол\\Инфа\\FloidUI\\FloidUI\\FloidUI.csproj",
+        "projectUniqueName": "C:\\Users\\apusi\\OneDrive\\Desktop\\uni\\Ksusha\\FloidUI\\FloidUI.csproj",
         "projectName": "FloidUI",
-        "projectPath": "C:\\Users\\kn_ks\\OneDrive\\Рабочий стол\\Инфа\\FloidUI\\FloidUI\\FloidUI.csproj",
-        "packagesPath": "C:\\Users\\kn_ks\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kn_ks\\OneDrive\\Рабочий стол\\Инфа\\FloidUI\\FloidUI\\obj\\",
+        "projectPath": "C:\\Users\\apusi\\OneDrive\\Desktop\\uni\\Ksusha\\FloidUI\\FloidUI.csproj",
+        "packagesPath": "C:\\Users\\apusi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\apusi\\OneDrive\\Desktop\\uni\\Ksusha\\FloidUI\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\kn_ks\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\apusi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -31,6 +31,7 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Users\\apusi\\OneDrive\\Desktop\\uni\\PhilosophersMAUI\\Contracts\\Contracts\\bin\\Debug": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
