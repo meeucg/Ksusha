@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\apusi\\OneDrive\\Desktop\\uni\\Ksusha\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FACCD4CF-C9EC-4F35-9945-889DAC7816F0}|FloidUI\\FloidUI.csproj|c:\\users\\apusi\\onedrive\\desktop\\uni\\ksusha\\floidui\\entriesgrid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FACCD4CF-C9EC-4F35-9945-889DAC7816F0}|FloidUI\\FloidUI.csproj|solutionrelative:floidui\\entriesgrid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FACCD4CF-C9EC-4F35-9945-889DAC7816F0}|FloidUI\\FloidUI.csproj|c:\\users\\apusi\\onedrive\\desktop\\uni\\ksusha\\floidui\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FACCD4CF-C9EC-4F35-9945-889DAC7816F0}|FloidUI\\FloidUI.csproj|solutionrelative:floidui\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FACCD4CF-C9EC-4F35-9945-889DAC7816F0}|FloidUI\\FloidUI.csproj|c:\\users\\apusi\\onedrive\\desktop\\uni\\ksusha\\floidui\\entriesgrid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FACCD4CF-C9EC-4F35-9945-889DAC7816F0}|FloidUI\\FloidUI.csproj|solutionrelative:floidui\\entriesgrid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FACCD4CF-C9EC-4F35-9945-889DAC7816F0}|FloidUI\\FloidUI.csproj|c:\\users\\apusi\\onedrive\\desktop\\uni\\ksusha\\floidui\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,26 +38,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "EntriesGrid.cs",
               "DocumentMoniker": "C:\\Users\\apusi\\OneDrive\\Desktop\\uni\\Ksusha\\FloidUI\\EntriesGrid.cs",
               "RelativeDocumentMoniker": "FloidUI\\EntriesGrid.cs",
-              "ToolTip": "C:\\Users\\apusi\\OneDrive\\Desktop\\uni\\Ksusha\\FloidUI\\EntriesGrid.cs*",
-              "RelativeToolTip": "FloidUI\\EntriesGrid.cs*",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAAC8AAAAtAAAA",
+              "ToolTip": "C:\\Users\\apusi\\OneDrive\\Desktop\\uni\\Ksusha\\FloidUI\\EntriesGrid.cs",
+              "RelativeToolTip": "FloidUI\\EntriesGrid.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-08T20:45:08.663Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\apusi\\OneDrive\\Desktop\\uni\\Ksusha\\FloidUI\\MainPage.xaml.cs",
               "RelativeDocumentMoniker": "FloidUI\\MainPage.xaml.cs",
-              "ToolTip": "C:\\Users\\apusi\\OneDrive\\Desktop\\uni\\Ksusha\\FloidUI\\MainPage.xaml.cs*",
-              "RelativeToolTip": "FloidUI\\MainPage.xaml.cs*",
-              "ViewState": "AQIAAJYAAAAAAAAAAAAAAKEAAABLAAAA",
+              "ToolTip": "C:\\Users\\apusi\\OneDrive\\Desktop\\uni\\Ksusha\\FloidUI\\MainPage.xaml.cs",
+              "RelativeToolTip": "FloidUI\\MainPage.xaml.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAAC4AAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-08T06:30:23.865Z",
               "EditorCaption": ""

@@ -33,7 +33,7 @@ namespace FloidUI
             matrixOut = matrix;
         }
 
-        public Task<int[,]> ReadMatrixfromEntriesGridAsync(EntriesGrid eg)
+        public async Task<int[,]> ReadMatrixfromEntriesGridAsync(EntriesGrid eg)
         {
             int size = eg.GetSize;
             var temp = new int[size,size];
