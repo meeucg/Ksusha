@@ -9,6 +9,8 @@
             Grid grid;
 
             public Grid GetGrid { get => grid; }
+            public Entry[,] GetEntries { get => entries; }
+            public int GetSize { get => size; }
             
             public EntriesGrid(int size, int dimensions) 
             {
@@ -43,7 +45,7 @@
                             FontSize = dimensions / (size*3),
                         };
                         entries[i, j] = temp;
-                        grid.Add(temp, i, j);
+                        grid.Add(temp, j, i);
                     }
                 }
 

@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\apusi\OneDrive\Desktop\uni\Ksusha\FloidUI\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-05-08T12:15:17.049</Modified>
+      <Modified>2024-05-10T15:08:51.446</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\apusi\OneDrive\Desktop\uni\Ksusha\FloidUI\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-05-08T12:15:16.863</Modified>
+      <Modified>2024-05-10T15:08:51.270</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\apusi\OneDrive\Desktop\uni\Ksusha\FloidUI\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\FloidUI.runtimeconfig.json">
       <PackagePath>FloidUI.runtimeconfig.json</PackagePath>
@@ -44,11 +44,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\apusi\OneDrive\Desktop\uni\Ksusha\FloidUI\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\FloidUI.dll">
       <PackagePath>FloidUI.dll</PackagePath>
-      <Modified>2024-05-08T12:15:16.301</Modified>
+      <Modified>2024-05-10T15:08:50.758</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\apusi\OneDrive\Desktop\uni\Ksusha\FloidUI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>FloidUI.exe</PackagePath>
-      <Modified>2024-05-08T12:15:16.308</Modified>
+      <Modified>2024-05-10T15:08:50.765</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\apusi\OneDrive\Desktop\uni\Ksusha\FloidUI\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>

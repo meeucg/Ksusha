@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FloidUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+58cd23514a1ffc3905a34c442efd6a2f783902a4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+92ff7a727c43a44fdc2cc1cc28cb2ad13ce88262")]
 [assembly: System.Reflection.AssemblyProductAttribute("FloidUI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FloidUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
